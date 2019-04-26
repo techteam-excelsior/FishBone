@@ -126,9 +126,7 @@ class ContainerViewController: UIViewController {
             ContainerViewController.menuDelegate!.moveToTrash()
         case .Trash:
             ContainerViewController.menuDelegate!.listTrashItems()
-        case .SetTemplate:
-            let template = A4TemplateViewController()
-            self.present(template, animated: true, completion: nil)
+        case .SetTemplate: break
         }
     }
     

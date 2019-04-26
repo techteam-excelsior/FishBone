@@ -8,34 +8,55 @@
 
 /* Begin PBXBuildFile section */
 		3F24E41622704B6100504CF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E41522704B6100504CF5 /* AppDelegate.swift */; };
-		3F24E41822704B6100504CF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E41722704B6100504CF5 /* ViewController.swift */; };
 		3F24E41B22704B6100504CF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F24E41922704B6100504CF5 /* Main.storyboard */; };
 		3F24E41D22704B6200504CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F24E41C22704B6200504CF5 /* Assets.xcassets */; };
 		3F24E42022704B6200504CF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F24E41E22704B6200504CF5 /* LaunchScreen.storyboard */; };
 		3F24E42822704B7E00504CF5 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E42722704B7E00504CF5 /* LandingPageViewController.swift */; };
-		3F24E42C22704B9C00504CF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E42922704B9C00504CF5 /* HomeViewController.swift */; };
 		3F24E42D22704B9C00504CF5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E42A22704B9C00504CF5 /* MenuViewController.swift */; };
 		3F24E42E22704B9C00504CF5 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E42B22704B9C00504CF5 /* ContainerViewController.swift */; };
-		3F24E43022704BDA00504CF5 /* Utils in Resources */ = {isa = PBXBuildFile; fileRef = 3F24E42F22704BDA00504CF5 /* Utils */; };
-		3F24E43222704BE200504CF5 /* View in Resources */ = {isa = PBXBuildFile; fileRef = 3F24E43122704BE200504CF5 /* View */; };
-		3F24E43422704BF200504CF5 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 3F24E43322704BF200504CF5 /* Model */; };
+		3F24E43922717CEF00504CF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E43822717CEF00504CF5 /* HomeViewController.swift */; };
+		3F24E43B2272C63200504CF5 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E43A2272C63200504CF5 /* MenuOption.swift */; };
+		3F24E4412272C65500504CF5 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E43D2272C65400504CF5 /* ArrayExtension.swift */; };
+		3F24E4422272C65500504CF5 /* PDFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E4402272C65500504CF5 /* PDFExtension.swift */; };
+		3F24E4432272C65500504CF5 /* TemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E43C2272C65400504CF5 /* TemplateModel.swift */; };
+		3F24E4442272C65500504CF5 /* FileHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E43E2272C65500504CF5 /* FileHandling.swift */; };
+		3F24E4452272C65500504CF5 /* ProcessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E43F2272C65500504CF5 /* ProcessModel.swift */; };
+		3F24E44D2272C65E00504CF5 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E4492272C65E00504CF5 /* GridView.swift */; };
+		3F24E44E2272C65E00504CF5 /* ArrowShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E4472272C65D00504CF5 /* ArrowShape.swift */; };
+		3F24E44F2272C65E00504CF5 /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E44C2272C65E00504CF5 /* ShapeCell.swift */; };
+		3F24E4502272C65E00504CF5 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E44A2272C65E00504CF5 /* CircleView.swift */; };
+		3F24E4512272C65E00504CF5 /* ProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E44B2272C65E00504CF5 /* ProcessView.swift */; };
+		3F24E4522272C65E00504CF5 /* arrow3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E4462272C65D00504CF5 /* arrow3.swift */; };
+		3F24E4532272C65E00504CF5 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E4482272C65E00504CF5 /* Arrow.swift */; };
+		3F24E4592272C6AB00504CF5 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E4582272C6AB00504CF5 /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F24E41222704B6100504CF5 /* FishBone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishBone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F24E41522704B6100504CF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F24E41722704B6100504CF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F24E41A22704B6100504CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F24E41C22704B6200504CF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F24E41F22704B6200504CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F24E42122704B6200504CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F24E42722704B7E00504CF5 /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
-		3F24E42922704B9C00504CF5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3F24E42A22704B9C00504CF5 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3F24E42B22704B9C00504CF5 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		3F24E42F22704BDA00504CF5 /* Utils */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utils; sourceTree = "<group>"; };
-		3F24E43122704BE200504CF5 /* View */ = {isa = PBXFileReference; lastKnownFileType = folder; path = View; sourceTree = "<group>"; };
-		3F24E43322704BF200504CF5 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
+		3F24E43822717CEF00504CF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3F24E43A2272C63200504CF5 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		3F24E43C2272C65400504CF5 /* TemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateModel.swift; sourceTree = "<group>"; };
+		3F24E43D2272C65400504CF5 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		3F24E43E2272C65500504CF5 /* FileHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandling.swift; sourceTree = "<group>"; };
+		3F24E43F2272C65500504CF5 /* ProcessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessModel.swift; sourceTree = "<group>"; };
+		3F24E4402272C65500504CF5 /* PDFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExtension.swift; sourceTree = "<group>"; };
+		3F24E4462272C65D00504CF5 /* arrow3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arrow3.swift; sourceTree = "<group>"; };
+		3F24E4472272C65D00504CF5 /* ArrowShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowShape.swift; sourceTree = "<group>"; };
+		3F24E4482272C65E00504CF5 /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
+		3F24E4492272C65E00504CF5 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		3F24E44A2272C65E00504CF5 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		3F24E44B2272C65E00504CF5 /* ProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessView.swift; sourceTree = "<group>"; };
+		3F24E44C2272C65E00504CF5 /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
+		3F24E4582272C6AB00504CF5 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		3F24E45B2272D5BD00504CF5 /* FishBone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FishBone.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,29 +89,64 @@
 		3F24E41422704B6100504CF5 /* FishBone */ = {
 			isa = PBXGroup;
 			children = (
-				3F24E43322704BF200504CF5 /* Model */,
-				3F24E43122704BE200504CF5 /* View */,
+				3F24E45B2272D5BD00504CF5 /* FishBone.entitlements */,
 				3F24E41522704B6100504CF5 /* AppDelegate.swift */,
-				3F24E42B22704B9C00504CF5 /* ContainerViewController.swift */,
-				3F24E43522704C0100504CF5 /* Controller */,
 				3F24E41922704B6100504CF5 /* Main.storyboard */,
-				3F24E41C22704B6200504CF5 /* Assets.xcassets */,
 				3F24E41E22704B6200504CF5 /* LaunchScreen.storyboard */,
-				3F24E42F22704BDA00504CF5 /* Utils */,
+				3F24E41C22704B6200504CF5 /* Assets.xcassets */,
+				3F24E4552272C67700504CF5 /* Model */,
+				3F24E4562272C68600504CF5 /* View */,
+				3F24E4572272C69400504CF5 /* Controller */,
+				3F24E45A2272C6B300504CF5 /* Utils */,
 				3F24E42122704B6200504CF5 /* Info.plist */,
 			);
 			path = FishBone;
 			sourceTree = "<group>";
 		};
-		3F24E43522704C0100504CF5 /* Controller */ = {
+		3F24E4552272C67700504CF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3F24E41722704B6100504CF5 /* ViewController.swift */,
-				3F24E42922704B9C00504CF5 /* HomeViewController.swift */,
+				3F24E43A2272C63200504CF5 /* MenuOption.swift */,
+				3F24E43D2272C65400504CF5 /* ArrayExtension.swift */,
+				3F24E43E2272C65500504CF5 /* FileHandling.swift */,
+				3F24E4402272C65500504CF5 /* PDFExtension.swift */,
+				3F24E43F2272C65500504CF5 /* ProcessModel.swift */,
+				3F24E43C2272C65400504CF5 /* TemplateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F24E4562272C68600504CF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F24E4482272C65E00504CF5 /* Arrow.swift */,
+				3F24E4462272C65D00504CF5 /* arrow3.swift */,
+				3F24E4472272C65D00504CF5 /* ArrowShape.swift */,
+				3F24E44A2272C65E00504CF5 /* CircleView.swift */,
+				3F24E4492272C65E00504CF5 /* GridView.swift */,
+				3F24E44B2272C65E00504CF5 /* ProcessView.swift */,
+				3F24E44C2272C65E00504CF5 /* ShapeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F24E4572272C69400504CF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F24E42B22704B9C00504CF5 /* ContainerViewController.swift */,
+				3F24E43822717CEF00504CF5 /* HomeViewController.swift */,
 				3F24E42A22704B9C00504CF5 /* MenuViewController.swift */,
 				3F24E42722704B7E00504CF5 /* LandingPageViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F24E45A2272C6B300504CF5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3F24E4582272C6AB00504CF5 /* Protocols.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +181,11 @@
 				TargetAttributes = {
 					3F24E41122704B6100504CF5 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -151,11 +212,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F24E43422704BF200504CF5 /* Model in Resources */,
 				3F24E42022704B6200504CF5 /* LaunchScreen.storyboard in Resources */,
 				3F24E41D22704B6200504CF5 /* Assets.xcassets in Resources */,
-				3F24E43022704BDA00504CF5 /* Utils in Resources */,
-				3F24E43222704BE200504CF5 /* View in Resources */,
 				3F24E41B22704B6100504CF5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,12 +225,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F24E41822704B6100504CF5 /* ViewController.swift in Sources */,
+				3F24E4532272C65E00504CF5 /* Arrow.swift in Sources */,
 				3F24E42D22704B9C00504CF5 /* MenuViewController.swift in Sources */,
+				3F24E43B2272C63200504CF5 /* MenuOption.swift in Sources */,
+				3F24E44D2272C65E00504CF5 /* GridView.swift in Sources */,
+				3F24E4412272C65500504CF5 /* ArrayExtension.swift in Sources */,
 				3F24E42822704B7E00504CF5 /* LandingPageViewController.swift in Sources */,
+				3F24E4512272C65E00504CF5 /* ProcessView.swift in Sources */,
+				3F24E4522272C65E00504CF5 /* arrow3.swift in Sources */,
+				3F24E4452272C65500504CF5 /* ProcessModel.swift in Sources */,
+				3F24E44E2272C65E00504CF5 /* ArrowShape.swift in Sources */,
+				3F24E4502272C65E00504CF5 /* CircleView.swift in Sources */,
+				3F24E4442272C65500504CF5 /* FileHandling.swift in Sources */,
+				3F24E4432272C65500504CF5 /* TemplateModel.swift in Sources */,
 				3F24E41622704B6100504CF5 /* AppDelegate.swift in Sources */,
+				3F24E4592272C6AB00504CF5 /* Protocols.swift in Sources */,
 				3F24E42E22704B9C00504CF5 /* ContainerViewController.swift in Sources */,
-				3F24E42C22704B9C00504CF5 /* HomeViewController.swift in Sources */,
+				3F24E4422272C65500504CF5 /* PDFExtension.swift in Sources */,
+				3F24E44F2272C65E00504CF5 /* ShapeCell.swift in Sources */,
+				3F24E43922717CEF00504CF5 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FishBone/FishBone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5526WN6N65;
 				INFOPLIST_FILE = FishBone/Info.plist;
@@ -336,6 +408,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FishBone/FishBone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5526WN6N65;
 				INFOPLIST_FILE = FishBone/Info.plist;

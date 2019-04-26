@@ -12,7 +12,7 @@ class LandingPageViewController: UIViewController {
     
     var stackView = UIStackView()
     static var projectName = ""
-    static var applicationName = "Process Diagram"
+    static var applicationName = "Fish Bone"
     var listController = UITableViewController()
     var projectListTable : UITableView!
     var projectList = [String]()
@@ -33,16 +33,7 @@ class LandingPageViewController: UIViewController {
         button.addTarget(self, action: #selector(loadExistingDoc), for: .touchUpInside)
         return button
     }
-    
-//    var recentsButton : UIButton {
-//        let button = UIButton(type: .custom)
-//        button.setImage(UIImage(named: "recent100"), for: .normal)
-//        button.addTarget(self, action: #selector(openNewDoc), for: .touchUpInside)
-//        return button
-//    }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .darkGray
@@ -54,15 +45,6 @@ class LandingPageViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
     func addButtons()
@@ -79,8 +61,6 @@ class LandingPageViewController: UIViewController {
         setupButtonLayout()
         
     }
-    
-    
     
     func setupButtonLayout()
     {
@@ -99,11 +79,7 @@ class LandingPageViewController: UIViewController {
         listController.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         
     }
-    
-    
-    
-    
-    
+
     func setNavigationBar() {
 //        let screenSize: CGRect = UIScreen.main.bounds
 //        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 80))
@@ -115,29 +91,18 @@ class LandingPageViewController: UIViewController {
     }
     
 
-    
-
 // OBJC Action Handlers
     @objc func loadExistingDoc()
     {
         let alert = UIAlertController(title: "Choose your project", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         populateProjectList()
+        
         listController.preferredContentSize = CGSize(width: alert.view.frame.width, height: 400)
-        // Constraints for the projectListTable
+        
         alert.setValue(listController, forKey: "contentViewController")
-        
-        
-        
-//        projecttranslatesAutoresizingMaskIntoConstraints = false
-//        listController.view.leftAnchor.constraint(equalTo: alert.view.leftAnchor).isActive = true
-//        listController.view.rightAnchor.constraint(equalTo: alert.view.rightAnchor).isActive = true
-//        listController.view.topAnchor.constraint(equalTo: alert.view.topAnchor).isActive = true
-//        listController.view.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor).isActive = true
-        
         self.present(alert, animated: true)
-        
-    
     }
     
     @objc func openNewDoc(){
@@ -158,12 +123,16 @@ class LandingPageViewController: UIViewController {
                     let directory = FileHandling(name: LandingPageViewController.projectName)
                     if directory.createSharedProjectDirectory()
                     {
-                        if directory.createNewProjectDirectory(){
+                        if directory.createDocumentsProjectDirectory()
+                        {
                             print("Directory successfully created!")
                             let cont = ContainerViewController()
                             self.present(cont, animated: true)
                         }
+                        else {self.showToast(message: "Project Name already exists.")}
+                        
                     }
+                    else {self.showToast(message: "Project Name already exists.")}
             }
         }))
         self.present(alert, animated: true)
@@ -171,6 +140,8 @@ class LandingPageViewController: UIViewController {
 
 }
 
+
+// MARK :- Entensions
 extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -183,13 +154,12 @@ extension LandingPageViewController: UITableViewDelegate, UITableViewDataSource
         cell.textLabel?.text = projectList[indexPath.row]
         return cell
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let cVC = ContainerViewController()
-        let temp = ContainerViewController()
+        let container = ContainerViewController()
         LandingPageViewController.projectName = projectList[indexPath.row]
         dismiss(animated: true) {
-            self.present(temp, animated: true)
+            self.present(container, animated: true)
         }
         
     }

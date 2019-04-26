@@ -33,21 +33,20 @@ struct FileHandling : AppFileManipulation, AppFileStatusChecking, AppFileSystemM
     func createSharedProjectDirectory() -> Bool{
         if createSharedDirectory(withName: name)
         {
-            print("Success")
             return true
         }
-        print("Did not create directory")
+        print("Did not create Shared Directory because it already exists")
         return false
     }
     
-    func createNewProjectDirectory() -> Bool
+    func createDocumentsProjectDirectory() -> Bool
     {
-        if createDirectory(at: .Documents, withName: name)
+        if createDocumentsDirectory(withName: name)
         {
-            print("Success")
+            print("Created Project Directory in Documents")
             return true
         }
-        print("Did not create directory")
+        print("Did not create Project Directory in Documents as it already exists")
         return false
     }
     
@@ -100,17 +99,17 @@ extension AppDirectoryNames
     
     func sharedDirectoryURL() -> URL?
     {
-        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.gmp")
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.excelsiortechteam")
     }
     
     func applicationInSharedDirectoryURL() -> URL?
     {
-        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.gmp")?.appendingPathComponent(LandingPageViewController.applicationName)
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.excelsiortechteam")?.appendingPathComponent(LandingPageViewController.applicationName)
     }
     
     func projectInSharedDirectoryURL() -> URL?
     {
-        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.gmp")?.appendingPathComponent(LandingPageViewController.applicationName).appendingPathComponent(LandingPageViewController.projectName)
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.excelsiortechteam")?.appendingPathComponent(LandingPageViewController.applicationName).appendingPathComponent(LandingPageViewController.projectName)
     }
     func getURL(for directory: AppDirectories) -> URL
     {
@@ -243,32 +242,82 @@ extension AppFileManipulation
             }
             catch
             {
+                NSLog("Error Creating Project Directory")
+            }
+        }
+        return false
+    }
+    
+    func createDocumentsDirectory(withName name: String) -> Bool{
+        let directoryPath = documentsDirectoryURL()
+        let applicationPath = (directoryPath.path) + "/" + LandingPageViewController.applicationName
+        if !FileManager.default.fileExists(atPath: applicationPath)
+        {
+            do{
+                try FileManager.default.createDirectory(atPath: applicationPath, withIntermediateDirectories: true, attributes: nil)
+                print("Created New Application Directory inside Documents Directory")
+            }
+            catch{
+                NSLog("Error occured while creating project folder")
+            }
+        }
+        else { print("Application already exists inside Documents directory. Proceeed to create project directory")}
+        
+        
+        let projectPath = applicationPath + "/" + name
+        print("Shared path = ", projectPath)
+        if !FileManager.default.fileExists(atPath: projectPath)
+        {
+            do
+            {
+                try FileManager.default.createDirectory(atPath: projectPath, withIntermediateDirectories: true, attributes: nil)
+                print("Created new Project Directory inside documents application directory")
+                return true
+            }
+            catch
+            {
                 NSLog("Path already exists. Choose a unique name for the Project")
             }
         }
-        print("Directory already exists. Choose a unique name for the project")
+        else
+        {
+            print("Project Directory already exists inside the Documents Application Directory. Please choose a unique name")
+            return false
+        }
+        
+        print("Fatal Error. Check Documents Directory")
         return false
     }
+    
+    
     
     func createSharedDirectory(withName name: String) -> Bool{
         let directoryPath = sharedDirectoryURL()
         if directoryPath != nil
         {
-            let applicationDirectory = (directoryPath?.path)! + "/" + LandingPageViewController.applicationName
-            if !FileManager.default.fileExists(atPath: applicationDirectory){
+            
+            let applicationPath = (directoryPath?.path)! + "/" + LandingPageViewController.applicationName
+            if !FileManager.default.fileExists(atPath: applicationPath)
+            {
                 do{
-                    try FileManager.default.createDirectory(atPath: applicationDirectory, withIntermediateDirectories: true, attributes: nil)
+                    try FileManager.default.createDirectory(atPath: applicationPath, withIntermediateDirectories: true, attributes: nil)
+                    print("Created New Application Directory inside Shared Directory")
                 }
                 catch{
                     NSLog("Error occured while creating project folder")
                 }
             }
-            let filePath = applicationDirectory + "/" + name
-            print("Shared path = ", filePath)
-            if !FileManager.default.fileExists(atPath: filePath){
+            else { print("Application already exists inside Shared directory. Proceeed to create project directory")}
+            
+            
+            let projectPath = applicationPath + "/" + name
+            print("Shared path = ", projectPath)
+            if !FileManager.default.fileExists(atPath: projectPath)
+            {
                 do
                 {
-                    try FileManager.default.createDirectory(atPath: filePath, withIntermediateDirectories: true, attributes: nil)
+                    try FileManager.default.createDirectory(atPath: projectPath, withIntermediateDirectories: true, attributes: nil)
+                    print("Created new Project Directory inside shared application directory")
                     return true
                 }
                 catch
@@ -276,8 +325,13 @@ extension AppFileManipulation
                     NSLog("Path already exists. Choose a unique name for the Project")
                 }
             }
+            else
+            {
+                print("Project Directory already exists inside the Shared Application Directory. Please choose a unique name")
+                return false
+            }
         }
-        print("Directory already exists. Choose a unique name for the project")
+        print("Could Not Locate Shared Directory. Fatal Error")
         return false
     }
     
