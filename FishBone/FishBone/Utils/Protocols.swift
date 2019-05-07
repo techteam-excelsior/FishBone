@@ -6,6 +6,11 @@
 //  Copyright © 2019 Gaurav Pai. All rights reserved.
 //
 import Foundation
+import UIKit
+
+protocol homeDelegate {
+    func addSubView(textField: UITextField)
+}
 
 protocol resizeDropzoneDelegate {
     func resizeDropZone()
@@ -16,15 +21,15 @@ protocol HomeControllerDelegate {
     
     func handleMenuToggle(forMenuOption menuOption: MenuOption?)
 }
+
+
 protocol menuControllerDelegate {
-    
     func saveViewState()
     func saveViewStateAsNew()
     func takeScreenShot()
     func exportAsPDF()
     func moveToTrash()
     func listTrashItems()
-    
 }
  // end protocol AppDirectoryNames
 

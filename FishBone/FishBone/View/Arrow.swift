@@ -26,5 +26,4 @@ extension UIBezierPath {
         path.closeSubpath()
         return self.init(cgPath: path)
     }
-    
 }

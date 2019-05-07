@@ -69,7 +69,6 @@ class ArrowShape: CAShapeLayer, UIGestureRecognizerDelegate {
     
     
     override init() {
-        print("init arrow")
         super.init()
         self.fillColor = UIColor.clear.cgColor
         self.strokeColor = UIColor.clear.cgColor

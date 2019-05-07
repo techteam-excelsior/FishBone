@@ -29,6 +29,7 @@
 		3F24E4522272C65E00504CF5 /* arrow3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E4462272C65D00504CF5 /* arrow3.swift */; };
 		3F24E4532272C65E00504CF5 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E4482272C65E00504CF5 /* Arrow.swift */; };
 		3F24E4592272C6AB00504CF5 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24E4582272C6AB00504CF5 /* Protocols.swift */; };
+		3FC2B19D227933B20088C791 /* BoneShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2B19C227933B20088C791 /* BoneShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		3F24E44C2272C65E00504CF5 /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
 		3F24E4582272C6AB00504CF5 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		3F24E45B2272D5BD00504CF5 /* FishBone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FishBone.entitlements; sourceTree = "<group>"; };
+		3FC2B19C227933B20088C791 /* BoneShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoneShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				3F24E4492272C65E00504CF5 /* GridView.swift */,
 				3F24E44B2272C65E00504CF5 /* ProcessView.swift */,
 				3F24E44C2272C65E00504CF5 /* ShapeCell.swift */,
+				3FC2B19C227933B20088C791 /* BoneShape.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				3F24E4432272C65500504CF5 /* TemplateModel.swift in Sources */,
 				3F24E41622704B6100504CF5 /* AppDelegate.swift in Sources */,
 				3F24E4592272C6AB00504CF5 /* Protocols.swift in Sources */,
+				3FC2B19D227933B20088C791 /* BoneShape.swift in Sources */,
 				3F24E42E22704B9C00504CF5 /* ContainerViewController.swift in Sources */,
 				3F24E4422272C65500504CF5 /* PDFExtension.swift in Sources */,
 				3F24E44F2272C65E00504CF5 /* ShapeCell.swift in Sources */,
