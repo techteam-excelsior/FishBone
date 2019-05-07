@@ -85,7 +85,7 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
         for i in 0...5 {
             if i%2 == 0
             {
-                let frame = CGRect(x: mainBoneLayer.frame.maxX - CGFloat((i+1)*220), y: self.mainBoneLayer.frame.minY - 600, width: 80, height: 600 )
+                let frame = CGRect(x: mainBoneLayer.frame.maxX - CGFloat((i+1)*275), y: self.mainBoneLayer.frame.minY - 600, width: 80, height: 600 )
                 let bone = BoneShape(withFrame: frame, boneIndex: i, isPrimaryBone: true, boneFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
                 bone.path = UIBezierPath.arrow(from: CGPoint(x: bone.bounds.maxX, y: bone.bounds.height-10), to: CGPoint(x: bone.bounds.minX, y: bone.bounds.minY), tailWidth: 2, headWidth: 10, headLength: 18).cgPath
                 self.mainView.layer.addSublayer(bone)
@@ -100,7 +100,7 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
                 
             else
             {
-                let frame = CGRect(x: mainBoneLayer.frame.maxX - CGFloat(i * 220), y: mainBoneLayer.frame.maxY, width: 80, height: 600)
+                let frame = CGRect(x: mainBoneLayer.frame.maxX - CGFloat(i * 275), y: mainBoneLayer.frame.maxY, width: 80, height: 600)
                 let bone = BoneShape(withFrame: frame, boneIndex: i, isPrimaryBone: true, boneFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
                 bone.path = UIBezierPath.arrow(from:CGPoint(x: bone.bounds.maxX, y: bone.bounds.minY + 10) , to: CGPoint(x: bone.bounds.minX, y: bone.bounds.height), tailWidth: 2, headWidth: 10, headLength: 18).cgPath
                 self.mainView.layer.addSublayer(bone)
@@ -346,7 +346,7 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
         self.scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(scrollView!)
         self.scrollView!.backgroundColor = UIColor.blue
-        let deltaX = 128/(self.view.frame.height * 2)
+        let deltaX = 64 * self.view.frame.width / self.view.frame.height
         self.scrollView?.delegate = self
         self.mainView = UIView(frame: CGRect(x: 0, y: 0, width: (self.view.frame.width + deltaX) * 2 , height: self.view.frame.height * 2))
         self.scrollView!.contentSize = CGSize(width: (self.mainView.frame.width), height: (self.mainView.frame.height))
