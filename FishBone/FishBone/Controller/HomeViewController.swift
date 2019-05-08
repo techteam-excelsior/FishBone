@@ -76,7 +76,7 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
         addInsertButton()
         addMainBoneLayer()
         addProblemStatement()
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         
@@ -304,7 +304,7 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
         textView.center = CGPoint(x: mainBoneLayer.frame.maxX + 145, y: mainBoneLayer.frame.midY)
 
         
-        let distanceToBottom = self.scrollView.frame.size.height - (activeTextView?.frame.origin.y)! - (activeTextView?.frame.size.height)!
+        let distanceToBottom = self.scrollView.frame.size.height - (activeTextView?.frame.origin.y)!/2 - (activeTextView?.frame.size.height)!/2
         let collapseSpace = keyboardHeight - distanceToBottom
         if collapseSpace > 0 {
             // set new offset for scroll view
@@ -320,22 +320,22 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
         self.mainView.layoutIfNeeded()
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("Entered")
-        let distanceToBottom = self.scrollView.frame.size.height - (textField.frame.origin.y) - (textField.frame.size.height)
-        let collapseSpace = keyboardHeight - distanceToBottom
-        if collapseSpace > 0 {
-            // set new offset for scroll view
-            UIView.animate(withDuration: 0.3, animations: {
-                // scroll to the position above keyboard 10 points
-                self.scrollView.contentOffset = CGPoint(x: self.lastOffset.x, y: collapseSpace)
-            })
-        }
-        //Update the scrollView content size to account for the increased contentView
-        let size = self.mainView.frame.size
-        self.scrollView.contentSize = CGSize(width: size.width, height: size.height)
-        self.mainView.layoutIfNeeded()
-    }
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        print("Entered")
+//        let distanceToBottom = self.scrollView.frame.size.height - (textField.frame.origin.y) - (textField.frame.size.height)
+//        let collapseSpace = keyboardHeight - distanceToBottom
+//        if collapseSpace > 0 {
+//            // set new offset for scroll view
+//            UIView.animate(withDuration: 0.3, animations: {
+//                // scroll to the position above keyboard 10 points
+//                self.scrollView.contentOffset = CGPoint(x: self.lastOffset.x, y: collapseSpace)
+//            })
+//        }
+//        //Update the scrollView content size to account for the increased contentView
+//        let size = self.mainView.frame.size
+//        self.scrollView.contentSize = CGSize(width: size.width, height: size.height)
+//        self.mainView.layoutIfNeeded()
+//    }
     // MARK: - Handlers
     
     func configureScrollView(){
@@ -388,11 +388,11 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
             self.scrollView.contentSize = CGSize(width: size.width, height: size.height + keyboardHeight)
             // move if keyboard hide input field
             if activeTextView != nil {
-                distanceToBottom = self.scrollView.frame.size.height - (activeTextView?.frame.origin.y ?? 0) - (activeTextView?.frame.size.height ?? 0)
+                distanceToBottom = self.scrollView.frame.size.height - (activeTextView?.frame.origin.y ?? 0)/2 - (activeTextView?.frame.size.height ?? 0)/2
                 print(distanceToBottom)
             }
             if activeTextField != nil {
-                distanceToBottom = self.scrollView.frame.size.height - (activeTextField?.frame.origin.y ?? 0) - (activeTextField?.frame.size.height ?? 0)
+                distanceToBottom = self.scrollView.frame.size.height - (activeTextField?.frame.origin.y ?? 0)/2 - (activeTextField?.frame.size.height ?? 0)/2
                 print(distanceToBottom)
             }
             let collapseSpace = keyboardHeight - distanceToBottom + 50
