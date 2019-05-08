@@ -20,6 +20,7 @@ class BoneShape: CAShapeLayer, UITextFieldDelegate {
     var isPrimaryBone: Bool!
     var whyBone: CAShapeLayer!
     var boneFrame: CGRect!
+    var whyText: UITextField!
 
     
     override init() {
@@ -48,16 +49,19 @@ class BoneShape: CAShapeLayer, UITextFieldDelegate {
         if isPrimaryBone {
             self.maxSecondaryBoneCount = 3
             boneTextField = UITextField()
-            boneTextField.layer.borderWidth = 2.5
+            boneTextField.layer.borderWidth = 1
             boneTextField.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-            boneTextField.backgroundColor = .white
-            boneTextField.font = UIFont(name: "Avenir", size: 36)
-            boneTextField.frame = CGRect(x:0 , y:0 , width: 180, height: 50)
+            boneTextField.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+            boneTextField.font = UIFont(name: "Zapfino", size: 36)
+            boneTextField.adjustsFontSizeToFitWidth = true
+
+            boneTextField.textAlignment = .center
+            boneTextField.frame = CGRect(x:0 , y:0 , width: 250, height: 80)
             if boneIndex%2 == 0 {
-                boneTextField.center = CGPoint(x: self.frame.minX, y: self.frame.minY-35)
+                boneTextField.center = CGPoint(x: self.frame.minX, y: self.frame.minY-45)
             }
             else{
-                boneTextField.center = CGPoint(x: self.frame.minX, y: self.frame.maxY+35)
+                boneTextField.center = CGPoint(x: self.frame.minX, y: self.frame.maxY+45)
             }
             for i in 0..<maxSecondaryBoneCount{
                 insertSecondaryBone(withIndex: i, parentIndex: self.boneIndex)
@@ -66,12 +70,14 @@ class BoneShape: CAShapeLayer, UITextFieldDelegate {
         else{
             self.maxSecondaryBoneCount = 1
             boneTextField = UITextField()
-            boneTextField.layer.borderWidth = 2.5
+            boneTextField.layer.borderWidth = 1
             boneTextField.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-            boneTextField.backgroundColor = .white
-            boneTextField.font = UIFont(name: "Avenir", size: 24)
-            boneTextField.frame = CGRect(x:0 , y:0 , width: 180, height: 50)
-            boneTextField.center = CGPoint(x: self.boneFrame.midX, y: self.boneFrame.midY-45)
+            boneTextField.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+            boneTextField.textAlignment = .center
+            boneTextField.font = UIFont(name: "Zapfino", size: 36)
+            boneTextField.frame = CGRect(x:0 , y:0 , width: 200, height: 80)
+            boneTextField.center = CGPoint(x: self.boneFrame.midX, y: self.boneFrame.midY-60)
+            boneTextField.adjustsFontSizeToFitWidth = true
             for _ in 0..<maxSecondaryBoneCount{
                 insert5whyBone()
             }
@@ -121,6 +127,15 @@ class BoneShape: CAShapeLayer, UITextFieldDelegate {
         whyBone.shadowColor = UIColor.lightGray.cgColor
 //        whyBone.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         
+        whyText = UITextField()
+        whyText.layer.borderWidth = 1
+        whyText.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        whyText.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        whyText.textAlignment = .center
+        whyText.font = UIFont(name: "Zapfino", size: 36)
+        whyText.frame = CGRect(x:0 , y:0 , width: 200, height: 80)
+        whyText.center = CGPoint(x: self.whyBone.frame.midX - 120, y: self.whyBone.frame.midY)
+        whyText.adjustsFontSizeToFitWidth = true
     }
     
     
