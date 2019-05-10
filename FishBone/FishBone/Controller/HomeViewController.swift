@@ -69,13 +69,13 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
     
     override func viewDidLoad()
     {
-        
         super.viewDidLoad()
         configureNavigationBar()
         configureScrollView()
         addInsertButton()
         addMainBoneLayer()
         addProblemStatement()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
@@ -124,6 +124,9 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
                 primaryBoneArray.append(bone)
             }
         }
+        
+        load_action()
+
         // End of funciton viewDidLoad()
     }
     
@@ -388,12 +391,10 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
             self.scrollView.contentSize = CGSize(width: size.width, height: size.height + keyboardHeight)
             // move if keyboard hide input field
             if activeTextView != nil {
-                distanceToBottom = self.scrollView.frame.size.height - (activeTextView?.frame.origin.y ?? 0)/2 - (activeTextView?.frame.size.height ?? 0)/2
-                print(distanceToBottom)
+                distanceToBottom = self.scrollView.frame.size.height - ((activeTextView?.frame.origin.y)!)/2 - ((activeTextView?.frame.size.height)!)/2
             }
             if activeTextField != nil {
-                distanceToBottom = self.scrollView.frame.size.height - (activeTextField?.frame.origin.y ?? 0)/2 - (activeTextField?.frame.size.height ?? 0)/2
-                print(distanceToBottom)
+                distanceToBottom = self.scrollView.frame.height - ((activeTextField?.frame.origin.y)!)/2 - ((activeTextField?.frame.size.height)!)/2
             }
             let collapseSpace = keyboardHeight - distanceToBottom + 50
             if collapseSpace < 0 {
@@ -464,28 +465,31 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
     
     func load_action()
     {
-//        let fileName = LandingPageViewController.projectName+".excelsior"
-//        let file = FileHandling(name: fileName)
-//        if file.findFile(in: .ProjectInShared) {
-//            try? self.jsonData = Data(contentsOf: getURL(for: .ProjectInShared).appendingPathComponent(fileName), options: .uncachedRead)
-//            print("Data encoded")
-//            let jsonDecoder = JSONDecoder()
-//            let decodedData = try? jsonDecoder.decode(entireBoneData.self, from: self.jsonData!)
-//            if decodedData != nil {
-//                let allData = decodedData
-//                restoreState(allData: allData!)
-//            }
-//        }
+        let fileName = LandingPageViewController.projectName+".excelsior"
+        let file = FileHandling(name: fileName)
+        if file.findFile(in: .ProjectInShared) {
+            try? self.jsonData = Data(contentsOf: getURL(for: .ProjectInShared).appendingPathComponent(fileName), options: .uncachedRead)
+            print("Data encoded")
+            let jsonDecoder = JSONDecoder()
+            let decodedData = try? jsonDecoder.decode(entireBoneData.self, from: self.jsonData!)
+            if decodedData != nil {
+                let allData = decodedData
+                restoreState(allData: allData!)
+            }
+        }
     }
     
     func restoreState(allData: entireBoneData){
         for i in 0..<allData.bones.count{
             let presentPrimaryBone = allData.bones[i]
             insertSubBones()
+            primaryBoneIndex = i
             primaryBoneArray[i].boneTextField.text = presentPrimaryBone.boneText
             for j in 0..<presentPrimaryBone.subBoneArray.count{
                 let presentSecondaryBone = presentPrimaryBone.subBoneArray[j]
                 didClickPrimaryBone = true
+                primaryBoneIndex = i
+                secondaryBoneIndex = j
                 insertSubBones()
                 primaryBoneArray[i].secondaryBoneArray[j].boneTextField.text = presentSecondaryBone.boneText
                 didClickPrimaryBone = false
@@ -493,14 +497,11 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
                     didClickSecondaryBone = true
                     insertSubBones()
                     primaryBoneArray[i].secondaryBoneArray[j].whyText.text = presentSecondaryBone.whyText
+                    didClickSecondaryBone = false
                 }
             }
             
         }
-        didClickPrimaryBone = false
-        
-        
-        
     }
     
     //    Generates unique ID for the shapes
