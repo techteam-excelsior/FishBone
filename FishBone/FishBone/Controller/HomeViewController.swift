@@ -485,6 +485,8 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
             insertSubBones()
             primaryBoneIndex = i
             primaryBoneArray[i].boneTextField.text = presentPrimaryBone.boneText
+            primaryBoneArray[i].boneTextField.backgroundColor = #colorLiteral(red: 1, green: 0.9561161762, blue: 0.8509541534, alpha: 1)
+            primaryBoneArray[i].boneTextField.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             for j in 0..<presentPrimaryBone.subBoneArray.count{
                 let presentSecondaryBone = presentPrimaryBone.subBoneArray[j]
                 didClickPrimaryBone = true
@@ -492,6 +494,8 @@ class HomeViewController: UIViewController, UIDropInteractionDelegate, UIScrollV
                 secondaryBoneIndex = j
                 insertSubBones()
                 primaryBoneArray[i].secondaryBoneArray[j].boneTextField.text = presentSecondaryBone.boneText
+                primaryBoneArray[i].secondaryBoneArray[j].boneTextField.backgroundColor = #colorLiteral(red: 1, green: 0.9561161762, blue: 0.8509541534, alpha: 1)
+                primaryBoneArray[i].secondaryBoneArray[j].boneTextField.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 didClickPrimaryBone = false
                 if presentSecondaryBone.isWhyEnabled{
                     didClickSecondaryBone = true
